@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        [InlineKeyboardButton("سایت ما", url="https://example.com")],
+        [InlineKeyboardButton("سایت ما", url="https://pooyayeganefar.ir/")],
         [InlineKeyboardButton("درباره ما", callback_data="about")],
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -12,7 +12,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-    await query.edit_message_text(f"شما گزینه '{query.data}' رو انتخاب کردید.")
+    await query.edit_message_text("پویا هستم توسعه دهنده ٫ چه خبر ؟")
 
 app = ApplicationBuilder().token("7749636225:AAFY5eiQ2DqiXHxUvveZ83OFa6thqoUrCqY").build()
 app.add_handler(CommandHandler("start", start))
